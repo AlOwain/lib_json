@@ -1,10 +1,13 @@
-all: build/main build
+all: build build/debug
 
-build/main: build/main.o
-	g++ build/main.o -o build/main
+build/debug: build/debug.o build/object.o
+	g++ build/debug.o build/object.o -o build/debug
 
-build/main.o: src/main.cpp
-	g++ -c src/main.cpp -o build/main.o
+build/debug.o: src/debug.cpp
+	g++ -c src/debug.cpp -o build/debug.o
+
+build/object.o: src/object.cpp
+	g++ -c src/object.cpp -o build/object.o
 
 build:
 	mkdir -p build
