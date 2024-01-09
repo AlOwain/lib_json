@@ -3,7 +3,7 @@
 
 namespace Object {
 
-class String : Primitive {
+class String : public Primitive {
 public:
     String(const char* key, const char* value);
 
