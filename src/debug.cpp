@@ -1,17 +1,17 @@
 #include <iostream>
-#include "object/number.h"
-#include "object/string.h"
+#include "object/primitives/number.h"
+#include "object/tree/tree.h"
 
 int main(int argc, char** argv)
 {
-    Object::String s("hello", "world");
-
-    Object::Number<int> y("hi", 5);
-
-    std::cout << s.value() << std::endl;
-    std::cout << y.value() << std::endl;
-
-    Object::Primitive* x = &y;
-    std::cout << x->value() << std::endl;
+    Object::Tree s;
+    std::cout << s.to_string(s.root) << std::endl;
+    s.add(new Object::Number<int>("first_num1", 5));
+    std::cout << s.to_string(s.root) << std::endl;
+    s.add(new Object::Number<int>("num2", 5));
+    s.add(new Object::Number<int>("num3", 2));
+    s.add(new Object::Number<int>("num4", 1));
+    std::cout << s.to_string(s.root) << std::endl;
+    
     return 0;
 }

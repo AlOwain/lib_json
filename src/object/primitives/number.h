@@ -1,14 +1,15 @@
 #pragma once
 #include "primitive.h"
+#include <string>
 
 namespace Object {
 
 template <typename T>
 class Number : public Primitive {
 public:
-    Number(const char* key, T value);
+    Number(std::string key, T value);
 
-    T value();
+    int value();
 private:
     T m_value;
 };

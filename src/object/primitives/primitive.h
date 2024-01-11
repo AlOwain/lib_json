@@ -1,14 +1,16 @@
 #pragma once
+#include <string>
 
 namespace Object {
 
 class Primitive {
 public:
-    Primitive(const char* key);
+    Primitive(std::string key);
 
-    virtual int value();
+    std::string key();
+    virtual int value() = 0;
 private:
-    const char* m_key;
+    std::string m_key;
 };
 
 }

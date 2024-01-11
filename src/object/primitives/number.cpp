@@ -6,8 +6,8 @@ template class Object::Number<int>;
 template class Object::Number<long long>;
 
 template <typename T>
-Object::Number<T>::Number(const char* key, T value)
+Object::Number<T>::Number(std::string key, T value)
     : Primitive(key), m_value(value) {}
 
 template <typename T>
-T Object::Number<T>::value() { return m_value; }
+int Object::Number<T>::value() { return m_value; }
